@@ -1,0 +1,73 @@
+<div class="footer" id="footer">
+    <div class="contact">
+        <form action="{:url('index/join')}" method="post">
+            <p class="contact-title">我要加盟</p>
+            <p class="contact-desc">如果您对该项目感兴趣，请立即留言或者拨打全国服务热线 4001533001我们会在第一时间与您联系，并提供更详细的资料
+            </p>
+            <div class="contact-input">
+                <span class="contact-input-left">联系人</span>
+                <input type="text" name="username">
+            </div>
+            <div class="contact-input">
+                <span class="contact-input-left">手机</span>
+                <input type="text" name="tel">
+            </div>
+            <div class="contact-input-long">
+                <span class="contact-input-left">联系邮箱</span>
+                <input type="text" name="email">
+            </div>
+            <div class="clearfloat"></div>
+            <div class="contact-input-long">
+                <span class="contact-input-left">信息备注</span>
+                <input type="text" name="info">
+            </div>
+            <div class="clearfloat"></div>
+            <div class="contact-input">
+                <span class="contact-input-left">验证码</span>
+                <input type="text" name="code">
+            </div>
+            <div class="yanzheng">
+                {:captcha_img()}
+                <button type="button" class="break">刷新</button>
+            </div>
+            <div class="caozuo">
+                <input type="submit" value="提交">
+                <input type="reset">
+            </div>
+        </form>
+    </div>
+    <div class="footer-logo">
+        <img src="__STATIC__/index/image/footer-logo.png">
+    </div>
+    <div class="footer-info">
+        <p>{$about.company_name}</p>
+        <p>加盟专线：{$about.join_tel}</p>
+        <p>24小时值班热线：{$about.company_tel}</p>
+        <p>地址：{$about.address}</p>
+        <p>{$about.records}</p>
+    </div>
+    <ul class="footer-link">
+        <li>
+            <a href="/">百草首页</a>
+        </li>
+        {foreach $column as $v}
+        <li>
+            <a href="{$v.column_link}">{$v.column_name}</a>
+        </li>
+        {/foreach}
+    </ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+    $('.break').click(function () {
+        $('.yanzheng img').attr('src', '/captcha.html?' + Math.random());
+    })
+    function addFav() {
+        alert("请ctrl+D收藏~~");
+    }  
+</script>
+
+</html>

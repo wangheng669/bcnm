@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>百草柠檬</title>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/phone/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/phone/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/phone/css/main.css">
+	<script type="text/javascript" src="__STATIC__/phone/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/phone/js/swiper.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/phone/js/main.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+</head>
+<body>
+	<div class="header" id="item1">
+		<div class="logo">
+			<img src="__STATIC__/phone/image/logo.png">
+			<div class="logo-text">
+				<p>国际前沿的顶级美味饮品</p>
+				<p>Top intemational food an drink</p>
+			</div>
+		</div>
+		<div class="nav">
+			<img src="__STATIC__/phone/image/nav.png" width="40px" height="40px" onclick="down()" >
+			<ul class="nav-container" hidden>
+				<li class="nav-item">
+					<a href="#item1">首页</a>
+				</li>
+				<li class="nav-item">
+					<a href="#item2">产品展示</a>
+				</li>
+				<li class="nav-item">
+					<a href="#item3">公司介绍</a>
+				</li>
+				<li class="nav-item">
+					<a href="#item4">关于我们</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="clearfloat"></div>
+	<div class="banner">
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+			{foreach $bannerLister as $v}
+	        <div class="swiper-slide"><a href="{$v.banner_link}"><img src="{$v.banner_img}"></a></div>
+			{/foreach}
+		</div>
+	    <div class="swiper-pagination"></div>
+	</div>
+	</div>
+	<div class="product" id="item2">
+		<div class="product-text">
+			<img src="__STATIC__/phone/image/product.png">
+		</div>
+		<div class="product-container">
+			{foreach $productList as $v}
+			<div class="product-item">
+				<img src="{$v.product_img}">
+				<p>{$v.product_title}</p>
+			</div>
+			{/foreach}
+		</div>
+	</div>
+	<div class="clearfloat"></div>
+	<div class="about" id="item3">
+		<div class="about-text">
+			<img src="__STATIC__/phone/image/about.png">
+		</div>
+		<img class="about-any" src="__STATIC__/phone/image/about-text1.png">
+		<img class="about-time" src="__STATIC__/phone/image/about-text2.png">
+		<p>百草柠檬是山东泰盈餐饮管理有限公司旗下品牌，其版权归属于山东泰盈餐饮管理有
+限公司。它是以新鲜冰激凌-茶饮为主的全国连锁品牌。百草柠檬，选料精良考究、品
+质上乘。对众多经典饮品的工艺流程加以标准化，并在每次的制作过程中都严格遵守，
+保证奉献给顾客的每一杯饮品都是纯正的滋味!百草柠檬对于原材品质不妥协，公司斥
+资百万元建造原材生产基地，致力于为顾客提供品质最上乘、健康安全的放心产品。全
+国免费咨询热线：400-1533-001</p>
+	<img class="about-big" src="__STATIC__/phone/image/about-2.png">
+	</div>
+	<div class="news" id="item4">
+		<div class="news-text">
+			<img src="__STATIC__/phone/image/news.png">
+		</div>
+		<p class="news-center">百草柠檬，一个深爱都市人追捧是品牌，它所代表的巨大商业价值毋庸置疑，市场前景亦让人惊叹不已。</p>
+		{foreach $newsList as $v}
+		<a href="/phonenews/{$v.id}">
+			<div class="news-item">
+				<img src="{$v.new_img}">
+				<p class="news-cate">#行业新闻#</p>
+				<p class="news-title">{$v.new_title}</p>
+				<p class="news-time">{$v.create_time}</p>
+				<div class="clearfloat"></div>
+			</div>
+		</a>
+		{/foreach}
+	</div>
+	<div class="footer">
+		<div class="join-tel">
+			<span>加盟热线：</span>
+			<span class="tel-color">{$about.join_tel}</span>
+		</div>
+		<div class="24-tel">
+			<span>24小时值班热线：</span>
+			<span class="tel-color">{$about.company_tel}</span>
+		</div>
+		<div class='address'>
+			<span>
+				地址：{$about.address}
+			</span>
+		</div>
+		<div class='address'>
+			<span>
+				备案号：{$about.records}
+			</span>
+		</div>
+	</div>
+	<div class="contact">
+		<a href="tel://{$about.join_tel}">咨询热线</a>
+		<a class="join-button">立即加盟</a>
+	</div>
+	<div class="join" hidden>
+		<p>立即加盟</p>
+		<span class="close-join">X</span>
+		<div class="join-form">
+			<form action="/index/index/join" method="post">
+				<input type="text" name="username" placeholder="你的名字">
+				<input type="text" name="tel" placeholder="手机号">
+				<input type="text" name="info" placeholder="备注信息">
+				<input type="text" name="email" placeholder="邮箱">
+				<input class="verify" type="text" name="code" placeholder="验证码">
+				<img src="/captcha" alt="点击更新验证码" onclick="this.src='/captcha'+'?'+Math.random()" />
+				<div class="clearfloat"></div>
+				<button>提交</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

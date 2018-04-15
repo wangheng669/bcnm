@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>关于百草</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/about.css">
+    <meta name="Keywords" content="{$about.keywords}">
+    <meta name="Description" content="{$about.description}">
+    <script type="text/javascript" src="__STATIC__/index/js/jquery.js"></script>
+    {include file='public/base_js' /}
+</head>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-top">
+            <span>欢迎来到百草柠檬品牌加盟网</span>
+            <div class="header-top-right">
+                <a href="#" onclick="addFav()">收藏百草</a>
+                <a href="/contact">在线留言</a>
+                <a href="#footer">联系百草</a>
+            </div>
+        </div>
+        <div class="logo"></div>
+        <div class="header-cnb">
+            <p>国际前沿的顶级美味饮品</p>
+            <p>Top international food and drink</p>
+        </div>
+        <div class="header-right">
+            <div class="header-brand">
+                品牌：百草柠檬
+            </div>
+            <div class="header-tel">
+                加盟专线：
+                <span>{$about.join_tel}</span>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li style="margin-left:0;">
+                <a href="/">
+                    <img src="__STATIC__/index/image/yinliao.png">首页
+                </a>
+            </li>
+            {foreach $column as $v}
+            <li>
+                <a href="{$v.column_link}">{$v.column_name}</a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="top-image">
+        <img src="__STATIC__/index/image/top-image.png">
+    </div>

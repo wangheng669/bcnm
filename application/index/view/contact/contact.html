@@ -1,0 +1,46 @@
+{include file='public/header' /}
+	<div class="center-container">
+		<div class="bread-nav">
+			<span class="first-nav" style="margin-left: 40px;">首页</span>
+			<span class="bread-symbol">»</span>
+			<span class="first-nav">联系百草</span>
+		</div>
+		<img src="__STATIC__/index/image/map.png" class="map">
+		<div class="prompt">
+			<span class="prompt-big">温馨提示</span>
+			<p>对项目留言即可获得项目详细资料请立即留言</p>
+			<div class="clearfloat"></div>
+			<p>留言成功后,负责人将会在24小时之内答复您,使您对此项目获得更多了解</p>
+		</div>
+		<div class="clearfloat"></div>
+		<div class="contact-slogan">
+			把握机会，抢占商机，给您感兴趣的项目留言，是走向成功的第一步！
+		</div>
+		<div class="contact-container">
+			<div class="contact-left">
+				<img src="__STATIC__/index/image/contact-small.png">
+				<p>咨询热线：{$about.join_tel}</p>
+				<p>24小时值班热线：{$about.company_tel}</p>
+				<p>地址：{$about.address}</p>
+			</div>
+			<div class="contact-right">
+				<form action="{:url('contact/contact')}" method="post">
+					<div class="contact-input2">
+						<label>你的名字</label><input type="text" name="username" placeholder="请输入您的称呼">
+					</div>
+					<div class="contact-input2">
+						<label>联系电话</label><input type="text" name="tel" placeholder="请输入您的常用联系方式">
+					</div>
+					<div class="contact-input2">
+						<label>联系地址</label><input type="text" name="address" placeholder="请您输入您的联系地址">
+					</div>
+					<div class="contact-input2">
+						<label>留言内容</label>
+						<textarea name="content"></textarea>
+					</div>
+					<button type="submit">提交</button>
+				</form>
+			</div>
+		</div>
+		<div class="clearfloat"></div>
+{include file='public/footer' /}

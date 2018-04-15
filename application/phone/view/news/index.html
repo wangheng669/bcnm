@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/phone/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/phone/css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>新闻中心</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div class="news-header">
+		<p>{$news.new_title}</p>
+		<span>{$news.create_time|strtotime|date="m日 d,Y",###}</span>
+	</div>
+	<div class="clearfloat"></div>
+	<div class="hr"></div>
+	<div class="news-container">
+		{$news.new_content}
+	</div>
+	<div class="clearfloat"></div>
+	<div class="news-footer">
+		<div class="close">
+			<img src="__STATIC__/phone/image/close.png" onClick="javascript :history.back(-1)">
+		</div>
+	</div>
+</body>
+</html>

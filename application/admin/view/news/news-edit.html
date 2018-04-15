@@ -1,0 +1,72 @@
+{include file="public/header"/} {include file='public/base_js' /}
+
+<body>
+    <div class="x-body">
+        <form class="layui-form" id="form_data">
+            <div class="layui-form-item">
+                <label class="layui-form-label">新闻标题</label>
+                <div class="layui-input-block">
+                    <input type="text" name="new_title" value="{$newsEdit.new_title}" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <input type="text" name="id" value="{$newsEdit.id}" hidden>
+            <div class="layui-form-item">
+                <label for="new_img" class="layui-form-label">
+                    <span class="x-red">*</span>图片
+                </label>
+                <div class="layui-input-inline">
+                    <button type="button" class="layui-btn" id="img">
+                        <i class="layui-icon">&#xe67c;</i>上传图片
+                    </button>
+                </div>
+            </div>
+            <img src="{$newsEdit.new_img}" width="192px" style="margin-left:110px;margin-bottom:10px;">
+            <input id="new_img" type="text" name="new_img" value="{$newsEdit.new_img}" hidden>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">新闻描述</label>
+                <div class="layui-input-block">
+                    <textarea name="new_desc" placeholder="请输入内容" class="layui-textarea">{$newsEdit.new_desc}</textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">新闻内容</label>
+                <script id="container" name="new_content" type="text/plain">{$newsEdit.new_content}</script>
+            </div>
+            <div class="layui-form-item">
+                <label for="L_repass" class="layui-form-label">
+                </label>
+                <button type="button" class="layui-btn" lay-filter="add" lay-submit="">
+                    保存
+                </button>
+            </div>
+        </form>
+    </div>
+    <script>
+        layui.use(['form', 'layer', 'upload'], function () {
+            $ = layui.jquery;
+            var form = layui.form;
+            var upload = layui.upload;
+            //监听提交
+            form.on('submit(add)', function () {
+                push("", "{:url('news/saveNews')}", $('#form_data').serialize());
+            });
+            //图片上传
+            var uploadInst = upload.render({
+                elem: '#img' //绑定元素
+                , url: '{:url('news/upload')}' // 上传接口
+                , done: function (res) {
+                    $('img').attr('src', '/public/uploads/' + res.src).height(119);
+                    $('#new_img').val('/public/uploads/' + res.src);
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript" src="/public/Ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="/public/Ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+        ue.ready(function () {
+            ue.setHeight(400);
+        });
+    </script>
+    {include file="public/footer"/}

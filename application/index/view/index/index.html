@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>百草柠檬</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/index.css">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/swiper.min.css">
+	<script type="text/javascript" src="__STATIC__/index/js/jquery.js"></script>
+	<script type="text/javascript" src="__STATIC__/index/js/swiper.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/index/js/index.js"></script>
+	<meta name="Keywords" content="{$about.keywords}">
+	<meta name="Description" content="{$about.description}">
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<div class="header-top">
+				<span>欢迎来到百草柠檬品牌加盟网</span>
+				<div class="header-top-right">
+					<a href="#" onclick="addFav()">收藏百草</a>
+					<a href="/contact">在线留言</a>
+					<a href="#footer">联系百草</a>
+				</div>
+			</div>
+			<div class="logo"></div>
+			<div class="header-cnb">
+				<p>国际前沿的顶级美味饮品</p>
+				<p>Top international food and drink</p>
+			</div>
+			<div class="header-right">
+				<div class="header-brand">
+					品牌：百草柠檬
+				</div>
+				<div class="header-tel">
+					加盟专线：
+					<span>400-1533-001</span>
+				</div>
+			</div>
+		</div>
+		<div class="nav">
+			<ul>
+				<li style="margin-left:0;" class="nav-active"><a href="#"><img src="__STATIC__/index/image/yinliao.png">首页</a></li>
+				 {foreach $column as $v}
+				<li>
+					<a href="{$v.column_link}">{$v.column_name}</a>
+				</li>
+				{/foreach}
+			</ul>
+		</div>
+		<div class="center-container">
+			<div class="banner">
+				<div class="swiper-container">
+					  <div class="swiper-wrapper">
+						{foreach $banner as $v}
+						<div class="swiper-slide"><a href="{$v.banner_link}"><img src="{$v.banner_img}"></a></div>
+						{/foreach}
+					  </div>
+				</div>
+			</div>
+			<div class="abstract">
+				<div class="abstract-left">
+					<h2>百草柠檬时刻</h2>
+					<p>百草柠檬是山东泰盈餐饮管理有限公司旗下品牌，其版权归属于山东泰盈餐饮管理有
+限公司。它是以新鲜冰激凌-茶饮为主的全国连锁品牌。百草柠檬，选料精良考究、品
+质上乘。对众多经典饮品的工艺流程加以标准化，并在每次的制作过程中都严格遵守，
+保证奉献给顾客的每一杯饮品都是纯正的滋味!百草柠檬对于原材品质不妥协，公司斥
+资百万元建造原材生产基地，致力于为顾客提供品质最上乘、健康安全的放心产品。全
+国免费咨询热线：400-1533-001</p>
+				</div>
+				<div class="abstract-right">
+					<img src="__STATIC__/index/image/abstract.png">
+				</div>
+			</div>
+			<div class="advantage">
+				<div class="advantage-top">
+					<h2>加盟优势</h2>
+					<div class="advantage-top-text">
+						<span class="advantage-top-hr"></span>
+						<p>&nbsp;JOIN&nbsp;THE&nbsp;ADVANTAGE&nbsp;</p>
+						<span class="advantage-top-hr"></span>
+					</div>
+				</div>
+				<div class="advantage-center">
+					<h3>十大优势，让你加盟无忧</h3>
+					<div class="advantage-center-center">
+						<div class="advantage-center-left">
+							<div class="advantage-left-container">
+								<div class="advantage-left-text">
+									<p class="advantage-title">品牌优势</p>
+									<p class="advantage-desc">全国火热的功能性奶茶饮品店</p>
+									<p class="advantage-desc">个性鲜明的品牌形象，风靡全球的时尚风格!</p>
+								</div>
+								<div class="advantage-left-icon">
+										<div class="advantage-icon">
+											<img src="__STATIC__/index/image/good.png">
+										</div>
+										<span class="advantage-center-hr"></span>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+							<div class="advantage-left-container">
+								<div class="advantage-left-text">
+									<p class="advantage-title">产品优势</p>
+									<p class="advantage-desc">六大类时尚产品广受追捧，紧密把握市场</p>
+									<p class="advantage-desc">流行消费趋势，联合研发中心不断开发新品!</p>
+								</div>
+								<div class="advantage-left-icon">
+										<div class="advantage-icon">
+											<img src="__STATIC__/index/image/yinpin.png">
+										</div>
+										<span class="advantage-center-hr"></span>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+							<div class="advantage-left-container">
+								<div class="advantage-left-text">
+									<p class="advantage-title">开业指导优势</p>
+									<p class="advantage-desc">多年成功的</p>
+									<p class="advantage-desc">市场连锁经验，全民有效的提高开店成功率!</p>
+								</div>
+								<div class="advantage-left-icon">
+										<div class="advantage-icon">
+											<img src="__STATIC__/index/image/search.png">
+										</div>
+										<span class="advantage-center-hr"></span>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+							<div class="advantage-left-container">
+								<div class="advantage-left-text">
+									<p class="advantage-title">成本优势</p>
+									<p class="advantage-desc">强大的全国连锁体系，保证原</p>
+									<p class="advantage-desc">材料的品质与价格，最大化的让利于加盟商!</p>
+								</div>
+								<div class="advantage-left-icon">
+										<div class="advantage-icon">
+											<img src="__STATIC__/index/image/chengben.png">
+										</div>
+										<span class="advantage-center-hr"></span>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+							<div class="advantage-left-container">
+								<div class="advantage-left-text">
+									<p class="advantage-title">物流优势</p>
+									<p class="advantage-desc">作成熟的全国物流体系，根本上</p>
+									<p class="advantage-desc">解决原料配送难题，有效降低采购花费成本!</p>
+								</div>
+								<div class="advantage-left-icon">
+										<div class="advantage-icon">
+											<img src="__STATIC__/index/image/wuliu.png">
+										</div>
+										<span class="advantage-center-hr"></span>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+						</div>
+						<div class="advantage-center-image">
+							<img src="__STATIC__/index/image/center.png">
+						</div>
+						<div class="advantage-center-right">
+							<div class="advantage-right-container">
+								<div class="advantage-right-text">
+									<p class="advantage-title">实地考察优势</p>
+									<p class="advantage-desc">慎重对待每一家加盟店亲临实地考察市场环境，最大限度规避风险！!</p>
+								</div>
+								<div class="advantage-right-icon">
+										<div class="advantage-icon">
+											<img src="__STATIC__/index/image/jiancha.png">
+										</div>
+										<span class="advantage-center-hr"></span>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+							<div class="advantage-right-container">
+								<div class="advantage-right-text">
+									<p class="advantage-title">运营指导优势</p>
+									<p class="advantage-desc">一年四季最新推广方案，全年12个月促销流行消费趋势，联合研发中心不断开发新品!</p>
+								</div>
+								<div class="advantage-right-icon">
+										<div class="advantage-icon">
+											<img src="__STATIC__/index/image/yunying.png">
+										</div>
+										<span class="advantage-center-hr"></span>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+							<div class="advantage-right-container">
+								<div class="advantage-right-text">
+									<p class="advantage-title">开业指导优势</p>
+									<p class="advantage-desc">开业前专业培训，开业中保姆式强化指导，
+									开业后系统性提升进修，全称考核包学包会！</p>
+								</div>
+								<div class="advantage-right-icon">
+										<div class="advantage-icon">
+											<img src="__STATIC__/index/image/peixun.png">
+										</div>
+										<span class="advantage-center-hr"></span>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+							<div class="advantage-right-container">
+								<div class="advantage-right-text">
+									<p class="advantage-title">市场策划优势</p>
+									<p class="advantage-desc">凭借成熟而完善的营
+									销模式，针对不同商圈不同时期推出相应促
+									销方案，加盟商按照总部要求执行即可盈利！</p>
+								</div>
+								<div class="advantage-right-icon">
+										<div class="advantage-icon">
+											<img src="__STATIC__/index/image/shichang.png">
+										</div>
+										<span class="advantage-center-hr"></span>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+							<div class="advantage-right-container">
+								<div class="advantage-right-text">
+									<p class="advantage-title">广告覆盖优势</p>
+									<p class="advantage-desc">涵盖全国的网络广告宣传，
+									立体化持续化的媒体宣传，针对新地区的加
+									盟店辅助一定的宣传，帮助加盟商打开市场！</p>
+								</div>
+								<div class="advantage-right-icon">
+										<div class="advantage-icon">
+											<img src="__STATIC__/index/image/shichang.png">
+										</div>
+										<span class="advantage-center-hr"></span>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+						</div>
+						<div class="clearfloat"></div>
+					</div>
+				</div>
+			</div>			
+			<div class="clearfloat"></div>
+			<div class="product">
+				<div class="product-top">
+					<h2>产品展示</h2>
+					<div class="product-top-text" style="margin-left: 560px;">
+						<span class="product-top-hr"></span>
+						<p>&nbsp;PRODUCT&nbsp;DISPLAY&nbsp;</p>
+						<span class="product-top-hr"></span>
+					</div>
+				</div>
+				<div class="clearfloat"></div>
+				<div class="product-list">
+					<div class="product-item">
+						<div class="product-desc">
+							<p>对于新时代消费者来说，喝饮品不仅是为了追求口感，更是为了体现一种生活态度与价值观</p>
+							<a href="#">查看更多</a>
+						</div>
+					</div>
+					{foreach $product as $v}
+					<div class="product-item">
+						<img src="{$v.product_img}">
+						<p>{$v.product_title}</p>
+					</div>
+					{/foreach}
+				</div>
+			</div>
+			<div class="clearfloat"></div>
+			<div  class="news">
+				<div class="news-top">
+					<h2>新闻中心</h2>
+					<div class="news-top-text" style="margin-left: 590px;">
+						<span class="news-top-hr"></span>
+						<p>&nbsp;NEWS&nbsp;CENTER&nbsp;</p>
+						<span class="news-top-hr"></span>
+					</div>
+				</div>
+				<div class="clearfloat"></div>
+				<p class="news-top">百草柠檬，一个深爱都市人追捧是品牌，它所代表的巨大商业价值毋庸置疑，市场前景亦让人惊叹不已。</p>
+				<div class="news-list">
+					 {foreach $news as $v}
+					 <a href="detail/{$v.id}">
+						<div class="news-item">
+							<img src="{$v.new_img}">
+							<div class="news-detail">
+								<div class="news-title">{$v.new_title}</div>
+								<div class="news-time">{$v.create_time|strtotime|date="y-m-d",###}</div>
+								<div class="news-desc">{$v.new_desc}</div>
+							</div>
+							<div class="news-date">
+								<p class="news-year">{$v.create_time|strtotime|date="y-m",###}</p>
+								<p class="news-day">{$v.create_time|strtotime|date="d",###}</p>
+							</div>
+						</div>
+					</a>
+					{/foreach}
+				</div>
+			</div>
+			<div class="clearfloat"></div>
+{include file='public/footer' /}

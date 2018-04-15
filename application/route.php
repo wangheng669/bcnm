@@ -10,12 +10,14 @@
 // +----------------------------------------------------------------------
 
 return [
-    '__pattern__' => [
-        'name' => '\w+',
-    ],
-    '[hello]'     => [
-        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-        ':name' => ['index/hello', ['method' => 'post']],
-    ],
-
+    'about' => 'About/index',
+    'contact' => 'Contact/index',
+    'analyze' => 'Analyze/index',
+    'flow' => 'Flow/index',
+    'news' => 'News/index',
+    'phonenews/:id' => 'phone/News/index',
+    'product' => 'Product/index',
+    'advantage' => 'Advantage/index',
+    'detail/:id' => 'News/detail',
+    'product/:id' => 'Product/index',
 ];

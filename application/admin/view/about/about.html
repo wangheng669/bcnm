@@ -1,0 +1,105 @@
+{include file='public/header' /}
+{include file='public/base_js' /}
+<body>
+    <div class="x-nav">
+        <span class="layui-breadcrumb">
+            <a>
+                <cite>首页</cite>
+            </a>
+            <a>
+                <cite>关于我们</cite>
+            </a>
+        </span>
+        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+            title="刷新">
+            <i class="layui-icon" style="line-height:30px">ဂ</i>
+        </a>
+    </div>
+    <div class="x-body">
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">公司设置</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <form class="layui-form layui-form-pane" id="form_data">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">
+                                <span class='x-red'>*</span>公司名称
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="company_name" autocomplete="off" placeholder="" class="layui-input" value="{$about.company_name}">
+                                <input type="text" name="id" value="{$about.id}" hidden>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">
+                                <span class='x-red'>*</span>加盟热线
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="join_tel" autocomplete="off" placeholder="" class="layui-input" value="{$about.join_tel}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">
+                                <span class='x-red'>*</span>值班热线
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="company_tel" autocomplete="off" placeholder="" class="layui-input" value="{$about.company_tel}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">
+                                <span class='x-red'>*</span>备案号
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="records" autocomplete="off" placeholder="" class="layui-input" value="{$about.records}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">
+                                <span class='x-red'>*</span>公司地址
+                            </label>
+                            <div class="layui-input-block">
+                                <textarea name="address" placeholder="" class="layui-textarea">{$about.address}</textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">
+                                <span class='x-red'>*</span>关键词
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="keywords" autocomplete="off" placeholder="" class="layui-input" value="{$about.keywords}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">
+                                <span class='x-red'>*</span>描述
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="description" autocomplete="off" placeholder="" class="layui-input" value="{$about.description}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <button type="button" class="layui-btn" lay-submit="" lay-filter="save">
+                                保存
+                            </button>
+                        </div>
+                    </form>
+                    <div style="height:100px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        layui.use([ 'layer', 'form'], function () {
+            $ = layui.jquery;//jquery
+            var form = layui.form;
+            //监听提交
+            form.on('submit(save)', function () {
+                push("", "{:url('about/saveAbout')}", $('#form_data').serialize());
+            });
+        })
+
+    </script>
+     {include file="public/footer"/}

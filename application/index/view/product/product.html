@@ -1,0 +1,52 @@
+{include file='public/header' /}
+<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/swiper.min.css">
+<script type="text/javascript" src="__STATIC__/index/js/swiper.min.js"></script>
+	<div class="center-container">
+		<div class="bread-nav">
+			<span class="first-nav" style="margin-left: 40px;">首页</span>
+			<span class="bread-symbol">»</span>
+			<span class="first-nav">产品展示</span>
+		</div>
+		<div class="category-nav">
+			<ul>
+				<div class="swiper-container">
+			    <div class="swiper-wrapper">
+					{foreach $category as $v}
+					<div class="swiper-slide">
+			        	<li {if condition=' $v.id eq $id' } class="category-nav-active" {/if}><a href="/product/id/{$v.id}">{$v.category_name}</a></li>
+					</div>
+					{/foreach}
+			    </div>
+			    <div class="swiper-button-prev"></div>
+    			<div class="swiper-button-next"></div>
+				</div>
+			</ul>
+		</div>
+		<div class="product-top">
+			<h2>产品展示，随心选择</h2>
+			<h2>TWO BIG SHOP TYPE SELECTION</h2>
+		</div>
+		<div class="product-container">
+			{foreach $product as $v}
+			<div class="product-item">
+				<img src="{$v.product_img}">
+				<p>{$v.product_title}</p>
+			</div>
+			{/foreach}
+		</div>
+		<div class="clearfloat"></div>
+		 {$product->render()}
+		<div class="clearfloat"></div>
+		<script>
+			var mySwiper = new Swiper('.swiper-container', {
+				slidesPerView: 5,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+			$('.category-nav ul li').mouseover(function () {
+				$(this).addClass('category-nav-active').parent().siblings().children().removeClass('category-nav-active');
+			})
+		</script>
+{include file='public/footer' /}

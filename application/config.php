@@ -43,7 +43,7 @@ return [
     // 是否开启多语言
     'lang_switch_on'         => false,
     // 默认全局过滤方法 用逗号分隔多个
-    'default_filter'         => '',
+    'default_filter'         => 'htmlspecialchars',
     // 默认语言
     'default_lang'           => 'zh-cn',
     // 应用类库后缀
@@ -139,9 +139,6 @@ return [
         // 标签库标签结束标记
         'taglib_end'   => '}',
     ],
-
-    // 视图输出字符串内容替换
-    'view_replace_str'       => [],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
@@ -238,4 +235,17 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+    'captcha' => [
+        // 字体大小
+        'fontSize' => 35,
+        // 验证码长度（位数）
+        'length' => 4,
+        'useCurve'=>false,
+    ],
+    'view_replace_str'       => [
+        '__STATIC__' => '/public/static',
+    ],
+    'TMPL_CACHE_ON' => false,//禁止模板编译缓存
+    'HTML_CACHE_ON' => false,//禁止静态缓存
+    'ACTION_CACHE_ON' => false,
 ];

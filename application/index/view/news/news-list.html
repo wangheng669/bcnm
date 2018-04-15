@@ -1,0 +1,40 @@
+{include file='public/header' /}
+	<div class="center-container">
+		<div class="bread-nav">
+			<span class="first-nav" style="margin-left: 40px;">首页</span>
+			<span class="bread-symbol">»</span>
+			<span class="first-nav">新闻中心</span>
+		</div>
+		<div class="news-left">
+			<h2>新闻中心</h2>
+			<ul>
+				{foreach $news as $v}
+				<li><a href="/detail/{$v.id}">{$v.new_title}</a></li>
+				{/foreach}
+			</ul>
+			<h2>热门中心</h2>
+			<img src="__STATIC__/index/image/news-hot.png">
+		</div>
+		<div class="news-right">
+			{foreach $news as $v}
+			<a href="/detail/{$v.id}">
+				<div class="news-item">
+					<div class="news-img">
+						<img src="{$v.new_img}">
+					</div>
+					<div class="news-detail">
+						<div class="news-title">
+							{$v.new_title}
+						</div>
+						<div class="news-desc">
+							{$v.new_desc}
+						</div>
+					</div>
+				</div>
+			</a>
+			<div class="clearfloat"></div>
+			 {/foreach}
+			 {$news->render()}
+		</div>
+		<div class="clearfloat"></div>
+{include file='public/footer' /}
