@@ -10,6 +10,7 @@ class Advantage extends Base
         return $this->fetch('advantage',[
             'column'=>$this->column,
             'about'=>$this->about,
+            'url'=>$_SERVER['REQUEST_URI'],
         ]);
     }
 }

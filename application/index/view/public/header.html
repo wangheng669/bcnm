@@ -2,7 +2,13 @@
 <html>
 
 <head>
-    <title>关于百草</title>
+    <title>
+        {foreach $column as $v}
+            {if condition=' $v.column_link eq $url '}
+                {$v.column_name}
+            {/if}
+        {/foreach}
+    </title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/reset.css">
     <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/about.css">

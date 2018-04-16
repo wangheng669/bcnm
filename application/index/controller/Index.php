@@ -16,6 +16,7 @@ class Index extends Base
             'product'=>$product,
             'news'=>$news,
             'about'=>$this->about,
+            'url'=>$_SERVER['REQUEST_URI'],
         ]);
     }
 }

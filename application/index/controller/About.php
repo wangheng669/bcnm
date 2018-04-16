@@ -10,6 +10,7 @@ class About extends Base
         return $this->fetch('about',[
             'column'=>$this->column,
             'about'=>$this->about,
+            'url'=>$_SERVER['REQUEST_URI'],
         ]);
     }
 }

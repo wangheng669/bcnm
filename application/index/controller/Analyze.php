@@ -10,6 +10,7 @@ class Analyze extends Base
         return $this->fetch('analyze',[
             'column'=>$this->column,
             'about'=>$this->about,
+            'url'=>$_SERVER['REQUEST_URI'],
         ]);
     }
 }

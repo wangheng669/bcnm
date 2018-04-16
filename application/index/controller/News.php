@@ -12,6 +12,7 @@ class News extends Base
             'column'=>$this->column,
             'news'=>$news,
             'about'=>$this->about,
+            'url'=>$_SERVER['REQUEST_URI'],
         ]);
     }
     public function detail($id=1)
@@ -22,6 +23,7 @@ class News extends Base
             'column'=>$this->column,
             'news'=>$news,
             'about'=>$this->about,
+            'url'=>'/news',
         ]);
     }
 }

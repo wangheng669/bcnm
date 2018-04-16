@@ -15,6 +15,7 @@ class Product extends Base
             'category'=>$category,
             'about'=>$this->about,
             'id'=>$id,
+            'url'=>$_SERVER['REQUEST_URI'],
         ]);
     }
 }

@@ -10,6 +10,7 @@ class Flow extends Base
         return $this->fetch('flow',[
             'column'=>$this->column,
             'about'=>$this->about,
+            'url'=>$_SERVER['REQUEST_URI'],
         ]);
     }
 }

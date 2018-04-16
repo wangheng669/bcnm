@@ -2,7 +2,7 @@
     <div class="contact">
         <form action="{:url('index/join')}" method="post">
             <p class="contact-title">我要加盟</p>
-            <p class="contact-desc">如果您对该项目感兴趣，请立即留言或者拨打全国服务热线 4001533001我们会在第一时间与您联系，并提供更详细的资料
+            <p class="contact-desc">如果您对该项目感兴趣，请立即留言或者拨打全国服务热线 {$about.join_tel}我们会在第一时间与您联系，并提供更详细的资料
             </p>
             <div class="contact-input">
                 <span class="contact-input-left">联系人</span>
@@ -30,6 +30,7 @@
                 {:captcha_img()}
                 <button type="button" class="break">刷新</button>
             </div>
+            <div class="clearfloat"></div>
             <div class="caozuo">
                 <input type="submit" value="提交">
                 <input type="reset">

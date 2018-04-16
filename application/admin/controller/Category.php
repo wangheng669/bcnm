@@ -20,9 +20,9 @@ class Category extends Base
     }
     public function categoryEdit($id)
     {
-        $CategoryEdit=model('Category')->get($id);
+        $categoryEdit=model('Category')->get($id);
         return $this->fetch('Category-edit',[
-            'CategoryEdit'=>$CategoryEdit
+            'categoryEdit'=>$categoryEdit
         ]); 
     }
     public function saveCategory(){

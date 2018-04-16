@@ -10,15 +10,16 @@ class Contact extends Base
         return $this->fetch('contact',[
             'column'=>$this->column,
             'about'=>$this->about,
+            'url'=>$_SERVER['REQUEST_URI'],
         ]);
     }
     public function contact(){
         $post_data=request()->post();
         $data=[
-            'username'=>htmlspecialchars($post_data['username']),
-            'tel'=>intval($post_data['tel']),
-            'address'=>htmlspecialchars($post_data['address']),
-            'content'=>htmlspecialchars($post_data['content']),
+            'username'=>$post_data['username'],
+            'tel'=>$post_data['tel'],
+            'address'=>$post_data['address'],
+            'content'=>$post_data['content'],
         ];
         if(model('Contact')->save($data)){
             $this->success('提交成功');
