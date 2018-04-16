@@ -10,6 +10,7 @@ class About extends Validate
     protected $rule    = [
         //id
         'id'    => 'number',
+        'title'  => 'require|checkChina',
         'company_name'  => 'require|checkChina',
         'join_tel'  => 'require|checkChina',
         'company_tel'  => 'require|checkChina',
@@ -18,6 +19,7 @@ class About extends Validate
     ];
     protected $message = [
         'id.number'     => '请勿修改',
+        'title.require'      => '请填写标题',
         'company_name.require'      => '请填写公司名称',
         'join_tel.require'      => '请填写加盟热线',
         'company_tel.require'      => '请填写值班热线',
